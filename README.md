@@ -1,6 +1,13 @@
-# 基于STM32的孤立词语音识别
+Isolated Word Speech Recognition Based on STM32
 
-本设计研究孤立词语音识别系统及其在STM32嵌入式平台上的实现。识别流程是：预滤波、ADC、分帧、端点检测、预加重、加窗、特征提取、特征匹配。端点检测(VAD)采用短时幅度和短时过零率相结合。检测出有效语音后，根据人耳听觉感知特性,计算每帧语音的Mel频率倒谱系数(MFCC)。然后采用动态时间弯折(DTW)算法与特征模板相匹配,最终输出识别结果。先用Matlab对上述算法进行仿真，经多次试验得出算法中所需各系数的最优值。然后将算法移植到STM32嵌入式平台，移植过程中根据嵌入式平台存储空间相对较小、计算能力也相对较弱的实际情况，对算法进行优化。最终设计并制作出基于STM32的孤立词语音识别系统。
+This design studies the isolated word speech recognition system and its implementation on the STM32 embedded platform. 
+The identification process is: pre-filtering, ADC, framing, endpoint detection, pre-emphasis, windowing, feature extraction, feature matching. Endpoint Detection (VAD) combines a short-term amplitude with a short-term zero-crossing rate. 
+After the effective speech is detected, the Mel frequency cepstral coefficient (MFCC) of each frame of speech is calculated according to the auditory perception characteristics of the human ear. 
+Then use the dynamic time warping (DTW) algorithm to match the feature template, and finally output the recognition result. Firstly, the above algorithm is simulated by Matlab. 
+After many experiments, the optimal values of the coefficients required in the algorithm are obtained. 
+Then the algorithm is transplanted to the STM32 embedded platform. 
+During the migration process, the algorithm is optimized according to the actual situation that the embedded platform has relatively small storage space and relatively weak computing power. 
+Finally, an STM32-based isolated speech recognition system was designed and produced.
 
-####详细介绍：
-http://gk969.com/stm32-speech-recognition/
+####Details:
+Http://gk969.com/stm32-speech-recognition/
